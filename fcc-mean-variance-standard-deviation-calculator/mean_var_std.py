@@ -11,44 +11,37 @@ def calculate(numbers: list) -> dict:
 
     matrix = np.array(numbers, dtype=float).reshape((3, 3))
 
-    means = [
-        np.mean(matrix, axis=0).tolist(),
-        np.mean(matrix, axis=1).tolist(),
-        np.mean(matrix)
-    ]
-    variances = [
-        np.var(matrix, axis=0).tolist(),
-        np.var(matrix, axis=1).tolist(),
-        np.var(matrix)
-    ]
-    standard_deviations = [
-        np.std(matrix, axis=0).tolist(),
-        np.std(matrix, axis=1).tolist(),
-        np.std(matrix)
-    ]
-    maxs = [
-        np.amax(matrix, axis=0).tolist(),
-        np.amax(matrix, axis=1).tolist(),
-        np.amax(matrix)
-    ]
-    mins = [
-        np.amin(matrix, axis=0).tolist(),
-        np.amin(matrix, axis=1).tolist(),
-        np.amin(matrix)
-    ]
-    sums = [
-        np.sum(matrix, axis=0).tolist(),
-        np.sum(matrix, axis=1).tolist(),
-        np.sum(matrix)
-    ]
-
     calculations = {
-        "mean": means,
-        "variance": variances,
-        "standard deviation": standard_deviations,
-        "max": maxs,
-        "min": mins,
-        "sum": sums
+        "mean": [
+            np.mean(matrix, axis=0).tolist(),
+            np.mean(matrix, axis=1).tolist(),
+            np.mean(matrix)
+        ],
+        "variance": [
+            np.var(matrix, axis=0).tolist(),
+            np.var(matrix, axis=1).tolist(),
+            np.var(matrix)
+        ],
+        "standard deviation": [
+            np.std(matrix, axis=0).tolist(),
+            np.std(matrix, axis=1).tolist(),
+            np.std(matrix)
+        ],
+        "max": [
+            np.amax(matrix, axis=0).tolist(),
+            np.amax(matrix, axis=1).tolist(),
+            np.amax(matrix)
+        ],
+        "min": [
+            np.amin(matrix, axis=0).tolist(),
+            np.amin(matrix, axis=1).tolist(),
+            np.amin(matrix)
+        ],
+        "sum": [
+            np.sum(matrix, axis=0).tolist(),
+            np.sum(matrix, axis=1).tolist(),
+            np.sum(matrix)
+        ]
     }
 
     return calculations
